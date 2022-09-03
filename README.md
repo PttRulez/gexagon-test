@@ -2,7 +2,7 @@
 
 ### **Ссылка на демо версию сайта:**
 
-Посмотреть рабочую версию можно <a href='http://gexagon.pttrulez.ru' target='_blank'>здесь</a>  [здесь](http://gexagon.pttrulez.ru)
+Посмотреть рабочую версию можно [здесь](http://gexagon.pttrulez.ru)
 
 ## **Краткое описание:**
 
