@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Тестовое задание для компании Гексагон на позицию fronten-developer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **Ссылка на демо версию сайта:**
 
-## Available Scripts
+Посмотреть рабочую версию можно [здесь](http://gexagon.pttrulez.ru)
 
-In the project directory, you can run:
+## **Краткое описание:**
 
-### `npm start`
+1. На странице "Все линки" отображаются все линки, которые сгенерировали незарегистрированны пользователи. Если послать любой моковый токен, то линка сгенерируется и будет в этом списке. Я специально вывел этот список, чтобы можно было потестить фильтры и сортировку на большой выборке
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Пагинацию нужно было реализовать на стороне сервера. Т.к. с бэка не приходит общее количество записей, то пагинацию я сделал на двух кнопках назад и вперед, без кнопок с номерами страниц
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. При регистрации ответом не приходит токен. Поэтому происходит переадресация на страницу логина и предлагается авторизоваться.
 
-### `npm test`
+4. После логина мы уже получаем токен и можем генерировать свои линки, которые будут привязаны к нашему юзеру. Поэтому появляются ещё два пункта в меню с нашими линками и с формой для генерации своих коротких ссылок.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. Таблицу можно сортировать по всем трем столбцам, кликнув на заголовок
 
-### `npm run build`
+6. Фильтрация по имени ссылок происходит на фронте, поэтому фильтруются толькоссылки на экране. Фильтрация происходит сразу же как вводится текст в поле фильтра
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7. Можно изменить количество ссылок, отображаемых единовременно. Для этого надо ввести цифру в поле справа сверху над таблицей и нажать Enter или кнопку рядом с этим полем. Произойдет ещё один запрос на сервер
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+8. Короткая ссылка копируется нажатием на иконку рядом с ней
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Запуск проекта у себя:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+git clone https://github.com/PttRulez/hexlet-basics.git petrov-aleksandr
+cd petrov-aleksandr
+npm install
+npm run start
+```
