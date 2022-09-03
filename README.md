@@ -29,4 +29,5 @@ git clone https://github.com/PttRulez/gexagon-test.git petrov-aleksandr
 cd petrov-aleksandr
 npm install
 npm run start
+
 ```
