@@ -44,6 +44,7 @@ const Login = () => {
             setErrors([]);
             setLogin(e.target.value);
           }}
+          placeholder='Логин'
           required
         />
         <input
@@ -53,6 +54,7 @@ const Login = () => {
             setErrors([]);
             setPassword(e.target.value);
           }}
+          placeholder='Пароль'
           required
         />
         <button type='submit'>Логин</button>

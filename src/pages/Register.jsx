@@ -42,6 +42,7 @@ const Register = () => {
             setErrors([])
             setLogin(e.target.value);
           }}
+          placeholder='Логин'
           required
         />
         <input
@@ -51,6 +52,7 @@ const Register = () => {
             setErrors([])
             setPassword(e.target.value);
           }}
+          placeholder='Пароль'
           required
         />
         <button type='submit'>Зарегистрироваться</button>

@@ -30,9 +30,33 @@ const LinksTable = () => {
     [location.pathname, token]
   );
 
+  const copyToClipboard = textToCopy => {
+    // navigator clipboard api needs a secure context (https)
+    if (navigator.clipboard && window.isSecureContext) {
+      // navigator clipboard api method'
+      return navigator.clipboard.writeText(textToCopy);
+    } else {
+      // text area method
+      let textArea = document.createElement('textarea');
+      textArea.value = textToCopy;
+      // make the textarea out of viewport
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      return new Promise((res, rej) => {
+        // here the magic happens
+        document.execCommand('copy') ? res() : rej();
+        textArea.remove();
+      });
+    }
+  };
+
   const copyLinkToClipBoard = link => {
     setCopiedId(link.id);
-    navigator.clipboard.writeText(`${baseURL}/s/${link.short}`);
+    copyToClipboard(`${baseURL}/s/${link.short}`);
   };
 
   const limitFilterSubmit = e => {
@@ -158,9 +182,13 @@ const LinksTable = () => {
         </tbody>
       </table>
       <div className='nav-buttons'>
-        <button onClick={() => setOffset(prev => prev - limit)} disabled={offset === 0}>Back</button>
-        <span>{offset/limit + 1}</span>
-        <button onClick={() => setOffset(prev => prev + limit)} disabled={links.length === 0}>Forward</button>
+        <button onClick={() => setOffset(prev => prev - limit)} disabled={offset === 0}>
+          Назад
+        </button>
+        <span>{offset / limit + 1}</span>
+        <button onClick={() => setOffset(prev => prev + limit)} disabled={links.length === 0}>
+          Вперёд
+        </button>
       </div>
     </div>
   );
